@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
-    <link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/assets/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="/public/assets/nprogress/nprogress.css">
-    <link rel="stylesheet" href="/public/less/index.css">
+    <?php include('./views/common/style.html')?>
 </head>
 
 <body>
@@ -34,30 +31,9 @@
             </form>
         </div>
     </div>
-
-    <script src="/public/assets/jquery/jquery.min.js"></script>
-    <script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
-    <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
+    <?php include('./views/common/script.html')?>
     <script>
-        /* 处理登录按钮 */
-        $('#btn-login').click(function () {
-            var result = $('#login').serialize();
-            $.ajax({
-                url: '/api/login',
-                data: result,
-                dataType: 'json',
-                success: function (data) {
-                    if (data.code === 200) {
-                        /* 登录成功 */
-                        location.href = '/views/main/index.html';
-                        data.result = JSON.stringify(data.result);
-                        /* 注意这里设置的时候只能是字符串 */
-                        $.cookie('loginInfo',data.result);
-                    }
-                }
-            })
-            return false;
-        })
+        require(['login']);
     </script>
 </body>
 
