@@ -15,7 +15,7 @@ define(['jquery','cookie'],function ($){
                     $.cookie('loginInfo',data.result);  
                 }
             }
-        })
+        });
         return false;
     })
-})
+});

@@ -16,7 +16,7 @@
         $info = substr($path,1);
         $result = explode('/',$info);
         if(count($result) == 2){
-            $info = $result[0];
+            $dir = $result[0];
             $files = $result[1];
         }else{
             $files = 'login';
