@@ -1,4 +1,4 @@
-define(['jquery','template','util'],function ($,template,util) {
+define(['jquery','template','util','datelocales','datepicker'],function ($,template,util) {
     var result = util.qs('id');
     if(result){
         /* 编辑操作 */
@@ -13,6 +13,7 @@ define(['jquery','template','util'],function ($,template,util) {
                         $('#teacherInfo').html(html);
                         /* 表单编辑功能 */
                         submitForm('/api/teacher/update');
+                        date();
                     }
                 }
             })
@@ -21,6 +22,7 @@ define(['jquery','template','util'],function ($,template,util) {
         var html = template('addTpl',{});
         $('#teacherInfo').html(html);
         submitForm('/api/teacher/add');
+        date();
     };
     /* 实现表单添加功能 */
     function submitForm(aa) {
@@ -41,5 +43,12 @@ define(['jquery','template','util'],function ($,template,util) {
             })
         })
     };
-
+    /* 实现提示日期时间 */
+    function date() {
+        $('.input-date').datepicker({
+            language:'zh-CN',
+            format:'yyyy-mm-dd',
+            endDate:'0d'
+        });
+    }
 });
