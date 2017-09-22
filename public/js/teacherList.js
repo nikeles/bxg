@@ -1,4 +1,4 @@
-define(['jquery','template'],function ($,template){
+define(['jquery','template','bootstrap'],function ($,template){
     $.ajax({
        type:'get',
        url:'/api/teacher',
@@ -31,14 +31,36 @@ define(['jquery','template'],function ($,template){
                                   $that.html('启用');
                               }else{
                                   $that.html('注销')
-                              }
+                              };
+
                           }
                       }
                   })
-              })
+              });
+              btn_look();
           }
 
        }
     });
+    /* 实现点击常看按钮功能 */
+    function btn_look() {
+        var id =
+        $(".btn-look").on('click',function () {
+            var id = $(this).closest('td').attr('data-id');
+            $.ajax({
+                type:"get",
+                url:"/api/teacher/view",
+                data:{"tc_id":id},
+                dataType:"json",
+                success:function (data) {
+                    if(data.code==200){
+                        var html = template('modalTpl',data.result);
+                        $('.modalInfo').html(html);
+                        $('#teacherModal').modal('show');
+                    }
+                }
+            })
+        })
+    };
 });
 

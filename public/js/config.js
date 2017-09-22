@@ -4,10 +4,16 @@ require.config({
         jquery:'jquery/jquery',
         cookie:'jquery-cookie/jquery.cookie',
         template:'artTemplate/template-web',
+        bootstrap:'bootstrap/js/bootstrap',
         common:'../js/common',
         login:'../js/login',
         teacherList:'../js/teacherList',
         teacherAdd:'../js/teacherAdd',
         util:'../js/util'
+    },
+    shim:{
+        bootstrap:{
+            deps:['jquery']
+        }
     }
 });
