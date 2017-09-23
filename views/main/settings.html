@@ -70,15 +70,15 @@
                 </div>
                 <div class="form-group">
                     <label  class="col-xs-3 control-label">籍贯</label>
-                    <div class="col-xs-5">
-                        <select name="" class="form-control input-sm">
-                            <opction value='1'>{{tc_hometown.split('|')[0]}}</opction>
+                    <div class="col-xs-5" id='pcd'>
+                        <select id="p" data-id = "{{tc_province}}" name="" class="form-control input-sm">
+                            <opction  value=''>请选择省</opction>
                         </select>
-                        <select name="" class="form-control input-sm">
-                            <opction value='1'>{{tc_hometown.split('|')[1]}}</opction>
+                        <select id="c" data-id = "{{tc_city}}" name="" class="form-control input-sm">
+                            <opction  value=''>请选择市</opction>
                         </select>
-                        <select name="" class="form-control input-sm">
-                            <opction value='1'>{{tc_hometown.split('|')[2]}}</opction>
+                        <select id="d" data-id = "{{tc_district}}" name="" class="form-control input-sm">
+                            <opction value=''>请选择县/区</opction>
                         </select>
                     </div>
                 </div>
