@@ -7,6 +7,7 @@ require.config({
         bootstrap:'bootstrap/js/bootstrap',
         datepicker:'bootstrap-datepicker/js/bootstrap-datepicker',
         datelocales:'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        validate:'validate/jquery.validate.min',
         common:'../js/common',
         login:'../js/login',
         teacherList:'../js/teacherList',
