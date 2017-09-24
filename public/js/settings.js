@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'region', 'uploadify'], function ($, template) {
+define(['jquery', 'template','ckeditor','region', 'uploadify','datepicker'], function ($, template,CHEDITOR) {
     $.ajax({
         type: 'get',
         url: '/api/teacher/profile',
@@ -28,8 +28,25 @@ define(['jquery', 'template', 'region', 'uploadify'], function ($, template) {
                 /*  处理省级县三级联动 */
                 $("#pcd").region({
                     url: '/public/assets/jquery-region/region.json'
-                })
+                });
+                /* 处理复文本 */
+                CKEDITOR.replace('editor',{
+                    'toolbarGroups' : [
+                        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+                    ]
+                });
+                // 实现提示日期时间
+                date();
             }
         }
-    })
+    });
+    /* 实现提示日期时间 */
+    function date() {
+        $('.input-date').datepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            endDate: '0d'
+        });
+    }
 });

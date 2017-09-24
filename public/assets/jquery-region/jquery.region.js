@@ -48,6 +48,7 @@
 
                     // 将请求来的地区数据缓存到本地变量中
                     region = data;
+                    console.log(data);
                 },
                 error: function () {
                     console.log('Region error!');
@@ -66,15 +67,16 @@
             var options = [];
 
             // 有默认值的状态
+            console.log(parmas);
+            
             for(var i=0; i<parmas.length; i++) {
                 var tmp = parmas[i].split('|');
                 var o = {};
-
                 o['el'] = tmp[0];
                 o['id'] = tmp[1];
                 o['pid'] = '000000'; // 省级
                 o['map'] = map[i];
-                
+
                 if(i > 0) {
                     // 查找市/区县的父级ID
                     o['pid'] = parmas[i - 1].split('|')[1];

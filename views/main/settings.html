@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include './views/common/style.html' ?>
+    <link rel="stylesheet" href="/public/assets/bootstrap-datepicker/css/bootstrap-datepicker.css">
 </head>
 <body>
     
@@ -65,7 +66,7 @@
                 <div class="form-group">
                     <label class="col-xs-3 control-label">出生日期</label>
                     <div class="col-xs-5">
-                        <input type="text" class="form-control input-sm" value='{{tc_birthday}}'>
+                        <input type="text" class="form-control input-sm input-date" value='{{tc_birthday}}'>
                     </div>
                 </div>
                 <div class="form-group">
@@ -97,13 +98,13 @@
                 <div class="form-group">
                     <label  class="col-xs-3 control-label">入职日期</label>
                     <div class="col-xs-5">
-                        <input type="text" class="form-control input-sm" value='{{tc_join_date}}'>
+                        <input type="text" class="form-control input-sm input-date" value='{{tc_join_date}}'>
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="col-xs-3 control-label">个人介绍</label>
                     <div class="col-xs-5 ckeditor">
-                        <textarea name="" rows="15" class="form-control input-sm">{{@tc_introduce}}</textarea>
+                        <textarea id='editor' name="" rows="15" class="form-control input-sm">{{@tc_introduce}}</textarea>
                     </div>
                 </div>
                 <div class="form-group">

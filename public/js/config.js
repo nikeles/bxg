@@ -10,6 +10,7 @@ require.config({
         validate:'validate/jquery.validate.min',
         region:'jquery-region/jquery.region',
         uploadify:'uploadify/jquery.uploadify.min',
+        ckeditor:'ckeditor/ckeditor',
         common:'../js/common',
         login:'../js/login',
         teacherList:'../js/teacherList',
@@ -26,6 +27,6 @@ require.config({
         },
         uploadify:{
             deps:['jquery']
-        }
+        },
     }
 });
