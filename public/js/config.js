@@ -9,7 +9,7 @@ require.config({
         datelocales:'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         validate:'validate/jquery.validate.min',
         region:'jquery-region/jquery.region',
-        // uploadify:'uploadify/jquery.uploadify.min',
+        uploadify:'uploadify/jquery.uploadify.min',
         common:'../js/common',
         login:'../js/login',
         teacherList:'../js/teacherList',
