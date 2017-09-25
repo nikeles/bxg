@@ -29,8 +29,6 @@ define(['jquery','template','cookie'], function ($,template) {
 	/* 同步头像和用户名 */
 	var loginInfo = $.cookie('loginInfo');
 	loginInfo = loginInfo && JSON.parse(loginInfo);
-
-	console.log(loginInfo);
 	// $('.aside .profile img').attr('src', loginInfo.tc_avatar);
 	// $('.aside .profile h4').html(loginInfo.tc_name);
 	// console.log(loginInfo);
