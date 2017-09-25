@@ -1,3 +1,4 @@
 define(['jquery','template','util'],function ($,template,util) {
-    util.setAsideActive(location.pathname)
+    util.setAsideActive(location.pathname);
+
 });

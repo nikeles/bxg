@@ -18,6 +18,5 @@ define(function () {
         setAsideActive: function (path) {
             $('.aside .navs a[href="' + path + '"]').addClass('active').parent().parent().show();
         }
-
     }
 });
