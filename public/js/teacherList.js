@@ -1,4 +1,6 @@
-define(['jquery','template','bootstrap'],function ($,template){
+define(['jquery','template','util','bootstrap'],function ($,template,util){
+    //处理侧边栏的选中效果
+     util.setAsideActive(location.pathname);
     $.ajax({
        type:'get',
        url:'/api/teacher',

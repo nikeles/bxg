@@ -8,15 +8,18 @@ require.config({
         datepicker:'bootstrap-datepicker/js/bootstrap-datepicker',
         datelocales:'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         validate:'validate/jquery.validate.min',
+        form:'jquery-form/jquery.form',
         region:'jquery-region/jquery.region',
         uploadify:'uploadify/jquery.uploadify.min',
         ckeditor:'ckeditor/ckeditor',
+        util:'../js/util',
         common:'../js/common',
         login:'../js/login',
         teacherList:'../js/teacherList',
         teacherAdd:'../js/teacherAdd',
-        util:'../js/util',
-        settings:'../js/settings'
+        settings:'../js/settings',
+        course_list:'../js/course_list',
+        course_add:'../js/course_add'
     },
     shim:{
         bootstrap:{
@@ -25,8 +28,8 @@ require.config({
         datelocales:{
             deps:['jquery']
         },
-        uploadify:{
-            deps:['jquery']
-        },
+        uploadify : {
+            deps : ['jquery']
+        }
     }
 });
