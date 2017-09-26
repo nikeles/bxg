@@ -20,7 +20,8 @@ require.config({
         settings:'../js/settings',
         course_list:'../js/course_list',
         course_add:'../js/course_add',
-        course_basic:'../js/course_basic'
+        course_basic:'../js/course_basic',
+        course_picture:'../js/course_picture'
     },
     shim:{
         bootstrap:{
