@@ -12,6 +12,7 @@ require.config({
         region:'jquery-region/jquery.region',
         uploadify:'uploadify/jquery.uploadify.min',
         ckeditor:'ckeditor/ckeditor',
+        jcrop:'jcrop/js/Jcrop',
         util:'../js/util',
         common:'../js/common',
         login:'../js/login',
@@ -32,6 +33,9 @@ require.config({
         },
         uploadify : {
             deps : ['jquery']
+        },
+        jcrop:{
+            deps:['jquery']
         }
     }
 });
