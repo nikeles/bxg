@@ -1,6 +1,6 @@
 define(['jquery', 'template', 'util', 'jcrop', 'uploadify','form'], function ($, template, util) {
     // 处理右侧选中效果
-    util.setAsideActive('/course/add');
+    util.setAsideActive('/course/course_add');
     // 获取地址栏的cs_id
     var csid = util.qs('cs_id');
     $.ajax({
@@ -26,7 +26,14 @@ define(['jquery', 'template', 'util', 'jcrop', 'uploadify','form'], function ($,
                     formData: { cs_id: csid },
                     onUploadSuccess: function (a, b, c) {
                         var src = JSON.parse(b.trim());
+
+                        console.log(src.result.path);
                         $('.picture .preview img').attr('src', src.result.path);
+                        console.log($('.picture .preview img').attr('src'));
+
+                        // 上传成功直接出现裁剪图片
+                        cutPicture();
+                        $('#jcrop-btn').text('保存图片').attr('data-flag',true);
                     }
                 });
                 // 处理封面裁切
@@ -56,10 +63,14 @@ define(['jquery', 'template', 'util', 'jcrop', 'uploadify','form'], function ($,
                 // 封装一个方法裁切图片      
                 function cutPicture() {
                     var img = $('.preview img');
+                    var nowCrop = null;
                     img.Jcrop({
                         boxWidth: 400,
                         aspectRatio: 2
                     }, function () {
+                        // 裁剪之前的裁剪实例(固定语法)
+                        nowCrop&&nowCrop.destroy();
+                        nowCrop=this;
                         // 计算图片的宽高
                         var width = this.ui.stage.width
                         var height = this.ui.stage.height
