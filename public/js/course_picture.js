@@ -49,7 +49,7 @@ define(['jquery', 'template', 'util', 'jcrop', 'uploadify','form'], function ($,
                             success:function (data){
                                 console.log(data);
                                 if(data.code==200){
-                                     location.href = '/course/course_lesson?cs_id='+data.result.cs_id;
+                                    //  location.href = '/course/course_lesson?cs_id='+data.result.cs_id;
                                 }
                             }
                         })

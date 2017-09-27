@@ -6,6 +6,7 @@ define(['jquery','template','util'],function ($,template,util) {
         dataType:'json',
         success:function (data) {
             if(data.code==200){
+                console.log(data);
                 var html = template('courseTpl',{list:data.result});
                 $("#courseInfo").html(html);
 

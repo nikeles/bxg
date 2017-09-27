@@ -61,7 +61,7 @@ define(['jquery', 'template', 'ckeditor', 'util', 'validate', 'form'], function 
                             dataType: 'json',
                             success: function (data) {
                                 if (data.code == 200) {
-                                    location.href='/course/course_picture';
+                                    location.href='/course/course_picture?cs_id='+cs_id;
                                 }
                             }
                         });
